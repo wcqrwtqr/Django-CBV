@@ -7,7 +7,6 @@ from . import models
 #def index(request):
 #    return render(request,'basic_app/index.html')
 
-
 # new type of view using classes
 '''
 #This is a very good method to get the view working (there is not need to get the paths and other methods)
@@ -22,11 +21,16 @@ class IndexView(TemplateView):
         context['injectme'] = 'BASIC INJECTION !!!!!'
         return context
 '''
+class IndexView(TemplateView):
+    template_name = 'basic_app/index.html'
+
 
 class SchoolListView(ListView):
+    context_object_name = 'schools'
     model = models.School
 
 class SchoolDeailView(DetailView):
+    context_object_name = 'school_detail'
     model = models.School
     template_name = 'basic_app/school_details.html'
 
