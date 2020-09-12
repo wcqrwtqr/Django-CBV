@@ -12,7 +12,7 @@ class School(models.Model):
 
 class Student(models.Model):
     name = models.CharField(max_length=265)
-    age = models.PositiveIntegerField
+    age = models.PositiveIntegerField()
     school = models.ForeignKey(School,related_name='student',on_delete=models.CASCADE)
 
     def __str__(self):
