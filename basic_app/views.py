@@ -39,5 +39,11 @@ class SchoolCreateView(CreateView):
     fields = ('name','principle','location')
     model = models.School
 
+class SchoolUpdateView(UpdateView):
+    fields = ('principle', 'name')
+    model = models.School
+
+
+
 
 
